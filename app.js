@@ -6,6 +6,7 @@ require("dotenv").config();
 
 // require routes
 var index = require("./routes/index");
+var administrator = require("./routes/administrator");
 
 // ===
 // ENV
@@ -36,6 +37,7 @@ connection.once("open", function () {
 // ROUTES
 // ======
 app.use(`/${protectRoute}`, index);
+app.use(`/${protectRoute}`, administrator);
 
 //app.listen
 app.listen(process.env.PORT || 5000, function () {
